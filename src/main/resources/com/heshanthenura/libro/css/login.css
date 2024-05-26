@@ -1,0 +1,32 @@
+.loginRoot {
+    -fx-background-image: url("../assets/login_bg.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.loginFormWrap {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.formLbl {
+
+}
+
+.formInp {
+    -fx-background-color: #dedede;
+    -fx-border-width: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.loginBtn {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-border-radius: 10px;
+}
+
+.settingsBtn {
+    -fx-background-color: #000000;
+}

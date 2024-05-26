@@ -1,0 +1,29 @@
+.dbsettingsRoot {
+    -fx-background-image: url("../assets/login_bg.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.settingsForm {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.dbField{
+    -fx-background-color: #dedede;
+    -fx-border-width: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.testBtn{
+    -fx-text-fill: white;
+    -fx-background-color: black;
+}
+
+.saveNConnectBtn {
+    -fx-text-fill: white;
+    -fx-background-color: black;
+    -fx-border-radius: 10px;
+}
