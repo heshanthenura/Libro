@@ -112,7 +112,7 @@ public class DBSettingController implements Initializable {
             Database.loadConfiguration();
             populateFieldsFromConfiguration();
         } catch (IOException e) {
-
+            e.printStackTrace();
         }
     }
 }

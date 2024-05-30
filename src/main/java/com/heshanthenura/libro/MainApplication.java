@@ -1,5 +1,6 @@
 package com.heshanthenura.libro;
 
+import com.heshanthenura.libro.services.database.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,6 +17,11 @@ public class MainApplication extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
+        try {
+            Database.loadConfiguration();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

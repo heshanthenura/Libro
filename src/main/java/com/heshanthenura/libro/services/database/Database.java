@@ -15,26 +15,19 @@ public class Database {
     private static String PASSWORD;
     private static String URL;
 
+    public static Connection getConnection() throws SQLException {
+        if (URL == null || URL.isEmpty()) {
+            URL = "jdbc:mysql://" + HOST.trim() + ":" + PORT.trim() + "/" + DBNAME.trim();
+        }
+        return DriverManager.getConnection(URL, USERNAME.trim(), PASSWORD.trim());
+    }
 
     public static String testConnection() {
-        Connection connection = null;
-        try {
-            if (URL == null || URL.isEmpty()) {
-                URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DBNAME;
-            }
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        try (Connection connection = getConnection()) {
             return "Connection was successful"; // Connection was successful
         } catch (SQLException e) {
             e.printStackTrace();
             return e.getMessage(); // Return the error message
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 
@@ -85,16 +78,26 @@ public class Database {
         try (FileInputStream input = new FileInputStream(configFile)) {
             properties.load(input);
 
-            HOST = properties.getProperty("host");
-            PORT = properties.getProperty("port");
-            DBNAME = properties.getProperty("dbname");
-            USERNAME = properties.getProperty("username");
-            PASSWORD = properties.getProperty("password ");
+            HOST = properties.getProperty("host").trim();
+            PORT = properties.getProperty("port").trim();
+            DBNAME = properties.getProperty("dbname").trim();
+            USERNAME = properties.getProperty("username").trim();
+            PASSWORD = properties.getProperty("password").trim();
+
+            // Debugging statements
+            System.out.println("Loaded configuration:");
+            System.out.println("HOST: " + HOST);
+            System.out.println("PORT: " + PORT);
+            System.out.println("DBNAME: " + DBNAME);
+            System.out.println("USERNAME: " + USERNAME);
+            // Do not print password for security reasons
+
         } catch (IOException e) {
             throw new IOException("Error loading configuration: " + e.getMessage());
         }
     }
 
+    // Getter and Setter methods
     public static String getHOST() {
         return HOST;
     }
