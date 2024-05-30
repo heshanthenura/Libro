@@ -28,3 +28,15 @@
 * ### Integration with digital catalogs and e-books
 * ### Import and export data functionality
 
+## Database Schema
+
+### Table: `users`
+
+id, username, password, role
+
+|Column | 	Data Type  | Constraints           | Description          |
+| ------------- |-------------|-----------------------|----------------------|
+| id  | INT         | PRIMARY KEY, NOT NULL | Auto generated ID    |
+| username  | VARCHAR(45) |        NOT NULL               | Username of the user |
+|      password     |       VARCHAR(45)      |        NOT NULL               | Password of the user |
+|         role          |    VARCHAR(45)         |       NOT NULL                | Role of the user     |
