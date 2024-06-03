@@ -34,9 +34,9 @@
 
 id, username, password, role
 
-|Column | 	Data Type  | Constraints           | Description          |
-| ------------- |-------------|-----------------------|----------------------|
-| id  | INT         | PRIMARY KEY, NOT NULL | Auto generated ID    |
-| username  | VARCHAR(45) |        NOT NULL               | Username of the user |
-|      password     |       VARCHAR(45)      |        NOT NULL               | Password of the user |
-|         role          |    VARCHAR(45)         |       NOT NULL                | Role of the user     |
+|Column | 	Data Type  | Constraints             | Description          |
+| ------------- |-------------|-------------------------|----------------------|
+| id  | INT         | PRIMARY KEY, NOT NULL, AUTO_INCREMENT | ID of the user       |
+| username  | VARCHAR(45) | NOT NULL                | Username of the user |
+|      password     |       VARCHAR(45)      | NOT NULL                | Password of the user |
+|         role          |    VARCHAR(45)         | NOT NULL                | Role of the user     |
